@@ -1,0 +1,74 @@
+
+
+<div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Registro  de reservas  </h3>
+  
+        <div class="card-tools">
+          <div class="input-group input-group-sm" style="width: 150px;">
+            <button  routerLink="/dashboard/crear-reserva" class="fa-sharp fa-solid fa-plus">nuevo</button> 
+       
+            <br>
+            <div class="input-group-append"> 
+                
+       
+              
+          </div>
+        </div>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body table-responsive p-0">
+        <table class="table table-hover text-nowrap">
+          <thead>
+            <tr>
+              <th>id Reserva</th>
+              <th>Fecha inicio</th>
+              <th>Fecha Fin</th>
+              <th>Apartamento</th>
+              <th>cliente</th>
+              <th>Alquiler</th>
+              <th>Tasa de servicio </th>
+              <th>imagen</th>
+             
+           
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let post of listPost">
+              <td >
+                {{post.id_reserva}}
+              </td>
+              <td >
+                {{post.fecha_inicio}}
+              </td>
+           <td>
+              {{post.fecha_fin}}
+             </td>
+             <td>
+              {{post.apartamento.nombre}}
+             </td>
+             <td>
+              {{post.cliente.nombre}}
+             </td>
+
+             <td>
+                ${{post.alquiler}}
+             </td>
+             <td>
+                ${{post.tasa_servicio}}
+             </td>
+             <td>
+              <img src="{{post.apartamento.imagen}} "  width="80" height="80" alt="Product Name">
+             </td>
+  
+            </tr>
+      
+   
+          </tbody>
+        </table>
+      </div>
+      <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+  </div>

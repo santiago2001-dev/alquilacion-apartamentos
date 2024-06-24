@@ -1,0 +1,78 @@
+
+
+<div class="col-12">
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Registro  de apartamentos  </h3>
+
+      <div class="card-tools">
+        <div class="input-group input-group-sm" style="width: 150px;">
+          <button  routerLink="/dashboard/add-autor" class="fa-sharp fa-solid fa-plus">nuevo</button> 
+     
+          <br>
+          <div class="input-group-append"> 
+              
+     
+            
+        </div>
+      </div>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body table-responsive p-0">
+      <table class="table table-hover text-nowrap">
+        <thead>
+          <tr>
+            <th>nombre</th>
+            <th>direccion</th>
+            <th>tipo</th>
+            <th>ciudad</th>
+            <th>tarifa</th>
+            <th>valor tarifa</th>
+            <th>imagen</th>
+           
+         
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let post of listPost">
+            <td >
+              {{post.nombre}}
+            </td>
+            <td >
+              {{post.direccion}}
+            </td>
+          
+           <td *ngIf="post.tipo_apartamento === '1'">
+           Coorporativo
+       
+           </td>
+
+
+           <td *ngIf="post.tipo_apartamento !== '1'">
+            turistico
+        
+            </td>
+           <td>
+            {{post.ciudad.nombre}}
+           </td>
+           <td>
+            {{post.tarifa.name}}
+           </td>
+           <td>
+            {{post.tarifa.valor_tarifa}}
+           </td>
+           <td>
+            <img src="{{post.imagen}}"  width="80" height="80" alt="Product Name" class="product-image">
+
+           </td>
+
+          </tr>
+    
+ 
+        </tbody>
+      </table>
+    </div>
+    <!-- /.card-body -->
+  </div>
+  <!-- /.card -->
+</div>
